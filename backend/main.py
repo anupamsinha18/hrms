@@ -8,7 +8,8 @@ load_dotenv()
 
 app = FastAPI(title="HRMS Lite API", version="1.0.0")
 
-# CORS
+
+
 origins = ["*"]
 
 app.add_middleware(

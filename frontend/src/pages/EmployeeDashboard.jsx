@@ -13,7 +13,7 @@ const EmployeeDashboard = () => {
         department: 'Engineering'
     });
     const [loading, setLoading] = useState(false);
-    const [pageLoading, setPageLoading] = useState(true); // For initial skeleton load
+    const [pageLoading, setPageLoading] = useState(true);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
@@ -22,7 +22,6 @@ const EmployeeDashboard = () => {
 
 
     const fetchEmployees = async () => {
-        // Only set loading spinner if it's not the initial page load (which uses skeletons)
         if (!pageLoading) setLoading(true);
         setError('');
         try {
@@ -94,7 +93,6 @@ const EmployeeDashboard = () => {
 
     return (
         <div className="container mx-auto px-4 max-w-7xl animate-fade-in relative">
-            {/* Delete Confirmation Modal */}
             {deleteId && (
                 <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
                     <div className="bg-brand-card border border-brand-highlight p-6 rounded-2xl shadow-2xl max-w-md w-full">
@@ -133,7 +131,6 @@ const EmployeeDashboard = () => {
                 <p className="text-brand-muted mt-2 font-light">Manage your organization's workforce with ease.</p>
             </div>
 
-            {/* Status Messages */}
             {error && (
                 <div className="mb-6 bg-red-900/20 border-l-4 border-red-500 p-4 rounded-r-lg shadow-sm animate-pulse">
                     <div className="flex items-center gap-2">
@@ -150,7 +147,6 @@ const EmployeeDashboard = () => {
             )}
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Add Employee Form */}
                 <div className="lg:col-span-1">
                     <div className="bg-brand-card p-6 rounded-2xl shadow-xl border border-brand-highlight sticky top-6">
                         <h2 className="text-xl font-semibold mb-6 flex items-center gap-2 text-brand-text">
@@ -234,13 +230,11 @@ const EmployeeDashboard = () => {
                     </div>
                 </div>
 
-                {/* Employee List */}
                 <div className="lg:col-span-2">
                     <div className="bg-brand-card p-6 rounded-2xl shadow-xl border border-brand-highlight min-h-[500px]">
                         <h2 className="text-xl font-semibold mb-6 text-brand-text">Employee Directory</h2>
 
                         {pageLoading ? (
-                            // Skeleton Loader
                             <div className="space-y-4 animate-pulse">
                                 {[...Array(5)].map((_, i) => (
                                     <div key={i} className="h-16 bg-brand-highlight/30 rounded-lg w-full"></div>

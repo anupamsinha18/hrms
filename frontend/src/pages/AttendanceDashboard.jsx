@@ -91,7 +91,6 @@ const AttendanceDashboard = () => {
             )}
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {/* Mark Attendance Card */}
                 <div className="lg:col-span-1">
                     <div className="bg-brand-card p-6 rounded-2xl shadow-xl border border-brand-highlight sticky top-6">
                         <h2 className="text-xl font-semibold mb-6 text-brand-text flex items-center gap-2">
@@ -165,7 +164,6 @@ const AttendanceDashboard = () => {
                     </div>
                 </div>
 
-                {/* Attendance History */}
                 <div className="lg:col-span-2">
                     <div className="bg-brand-card p-6 rounded-2xl shadow-xl border border-brand-highlight min-h-[400px]">
                         <div className="flex justify-between items-center mb-6">

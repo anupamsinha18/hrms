@@ -10,8 +10,8 @@ DB_NAME = os.getenv("DB_NAME")
 
 print(f"DEBUG: MONGO_URI loaded: {MONGO_URI}")
 
-# Configure MongoDB client with SSL certificate bypass for development
-# Note: tlsAllowInvalidCertificates=True bypasses SSL verification
+
+
 client = AsyncIOMotorClient(
     MONGO_URI,
     tlsAllowInvalidCertificates=True,
