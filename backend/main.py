@@ -11,11 +11,15 @@ app = FastAPI(title="HRMS Lite API", version="1.0.0")
 
 
 
-origins = ["*"]
+origins = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://imaginative-macaron-d13858.netlify.app",
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origin_regex="https?://.*",
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
