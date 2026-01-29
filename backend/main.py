@@ -9,12 +9,7 @@ load_dotenv()
 app = FastAPI(title="HRMS Lite API", version="1.0.0")
 
 # CORS
-origins = [
-    "http://localhost:5173",  # React default port
-    "http://localhost:5174",  # Vite alternate port
-    "http://localhost:5175",  # Vite alternate port 2
-    "http://localhost:3000",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
